@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { ArrowUp, Menu, X } from 'lucide-react'
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { href: '#services', label: 'Services' },
@@ -13,14 +13,6 @@ const navLinks = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 220)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   const scrollToTop = () => {
     setOpen(false)
@@ -37,26 +29,26 @@ export function SiteHeader() {
       }}
     >
       <div className="mx-auto flex h-[70px] max-w-[1440px] items-center gap-9 px-4 md:h-[84px] md:px-[4vw]">
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={scrollToTop}
-            aria-label="Back to top"
-            className={`grid size-11 place-items-center rounded-full border border-white/30 bg-[rgba(3,17,29,0.45)] text-white transition-all duration-300 hover:bg-primary hover:border-primary ${
-              scrolled
-                ? 'scale-100 opacity-100'
-                : 'pointer-events-none -translate-x-1 scale-90 opacity-0'
-            }`}
-          >
-            <ArrowUp className="size-5" />
-          </button>
+        <button
+          type="button"
+          onClick={scrollToTop}
+          aria-label="Breakwall Specialists — back to top"
+          className="group flex items-center gap-2 rounded-full p-0.5 transition-transform hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        >
+          <span className="grid size-11 place-items-center overflow-hidden rounded-full bg-white shadow-[0_6px_16px_rgba(0,0,0,0.28)] ring-1 ring-white/40">
+            <img
+              src="/assets/breakwall-logo.png"
+              alt="Breakwall Specialists logo"
+              className="size-[38px] object-contain"
+            />
+          </span>
           <span className="hidden font-display text-lg font-extrabold leading-[0.88] tracking-[0.06em] sm:block">
             BREAKWALL
             <small className="block text-[0.7em] font-semibold tracking-[0.24em]">
               SPECIALISTS
             </small>
           </span>
-        </div>
+        </button>
 
         <nav
           aria-label="Primary navigation"
