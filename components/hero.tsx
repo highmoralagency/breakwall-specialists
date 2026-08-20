@@ -83,7 +83,7 @@ export function Hero() {
       <img
         src="/assets/breakwall-logo-transparent.png"
         alt="Breakwall Specialists logo"
-        className="absolute left-[6%] top-[8%] z-20 h-[168px] w-auto object-contain [filter:drop-shadow(0_0_18px_rgba(255,255,255,0.4))_drop-shadow(0_10px_24px_rgba(0,0,0,0.45))] md:hidden"
+        className="absolute left-[6%] top-[14%] z-20 h-[168px] w-auto object-contain [filter:drop-shadow(0_0_18px_rgba(255,255,255,0.4))_drop-shadow(0_10px_24px_rgba(0,0,0,0.45))] md:hidden"
       />
 
       {/* Content — drifts up slightly slower for layered depth */}
@@ -126,7 +126,7 @@ export function Hero() {
 
         {/* Desktop: logo lockup sits above the advantages card on the right */}
         <div className="hidden md:block">
-          <div className="mb-6 flex justify-end">
+          <div className="mb-6 mt-10 flex justify-end">
             <img
               src="/assets/breakwall-logo-transparent.png"
               alt="Breakwall Specialists logo"
