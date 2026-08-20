@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { ArrowUp, Menu, X } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { Menu, Phone, X } from 'lucide-react'
 
 const navLinks = [
   { href: '#services', label: 'Services' },
@@ -11,16 +11,30 @@ const navLinks = [
   { href: '#contact', label: 'Contact' },
 ]
 
+const PHONE_DISPLAY = '519-919-9057'
+const PHONE_HREF = 'tel:+15199199057'
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [hidden, setHidden] = useState(false)
+  const [atTop, setAtTop] = useState(true)
+  const lastY = useRef(0)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 220)
-    onScroll()
+    lastY.current = window.scrollY
+    const onScroll = () => {
+      const y = window.scrollY
+      setAtTop(y < 24)
+      // Only react to meaningful movement to avoid jitter.
+      if (Math.abs(y - lastY.current) > 6) {
+        // Hide when scrolling down past the hero, reveal when scrolling up.
+        setHidden(y > lastY.current && y > 160 && !open)
+        lastY.current = y
+      }
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [open])
 
   const scrollToTop = () => {
     setOpen(false)
@@ -30,33 +44,32 @@ export function SiteHeader() {
   return (
     <header
       id="top"
-      className="fixed inset-x-0 top-0 z-30 text-white"
+      className={`fixed inset-x-0 top-0 z-30 text-white transition-transform duration-500 ease-out ${
+        hidden ? '-translate-y-full' : 'translate-y-0'
+      }`}
       style={{
-        background:
-          'linear-gradient(180deg, rgba(4,17,29,.94), rgba(4,17,29,.55), transparent)',
+        background: atTop
+          ? 'linear-gradient(180deg, rgba(4,17,29,.94), rgba(4,17,29,.55), transparent)'
+          : 'rgba(4,17,29,.9)',
+        backdropFilter: atTop ? 'none' : 'saturate(140%) blur(10px)',
+        boxShadow: atTop ? 'none' : '0 10px 30px rgba(0,0,0,0.35)',
+        transitionProperty: 'transform, background, box-shadow',
       }}
     >
-      <div className="mx-auto flex h-[70px] max-w-[1440px] items-center gap-9 px-4 md:h-[84px] md:px-[4vw]">
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={scrollToTop}
-            aria-label="Back to top"
-            className={`grid size-11 place-items-center rounded-full border border-white/30 bg-[rgba(3,17,29,0.45)] text-white transition-all duration-300 hover:bg-primary hover:border-primary ${
-              scrolled
-                ? 'scale-100 opacity-100'
-                : 'pointer-events-none -translate-x-1 scale-90 opacity-0'
-            }`}
-          >
-            <ArrowUp className="size-5" />
-          </button>
-          <span className="hidden font-display text-lg font-extrabold leading-[0.88] tracking-[0.06em] sm:block">
+      <div className="mx-auto flex h-[70px] max-w-[1440px] items-center gap-6 px-4 md:h-[84px] md:px-[4vw]">
+        <button
+          type="button"
+          onClick={scrollToTop}
+          aria-label="Breakwall Specialists — back to top"
+          className="group flex items-center rounded-full transition-transform hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        >
+          <span className="font-display text-base font-extrabold leading-[0.88] tracking-[0.06em] sm:text-lg">
             BREAKWALL
             <small className="block text-[0.7em] font-semibold tracking-[0.24em]">
               SPECIALISTS
             </small>
           </span>
-        </div>
+        </button>
 
         <nav
           aria-label="Primary navigation"
@@ -73,11 +86,23 @@ export function SiteHeader() {
           ))}
         </nav>
 
+        {/* Call Now — desktop */}
         <a
-          href="#contact"
-          className="ml-auto hidden rounded-[5px] bg-primary px-5 py-3 text-xs font-extrabold uppercase tracking-[0.05em] text-primary-foreground transition-colors hover:bg-accent lg:ml-0 lg:inline-flex"
+          href={PHONE_HREF}
+          className="ml-6 hidden items-center gap-2 rounded-[5px] bg-primary px-5 py-3 text-xs font-extrabold uppercase tracking-[0.05em] text-primary-foreground transition-colors hover:bg-accent lg:inline-flex"
         >
-          Free Estimate
+          <Phone className="size-4" />
+          Call Now
+        </a>
+
+        {/* Call Now — mobile (icon + short label), sits left of the menu toggle */}
+        <a
+          href={PHONE_HREF}
+          aria-label={`Call Breakwall Specialists at ${PHONE_DISPLAY}`}
+          className="ml-auto inline-flex items-center gap-2 rounded-[5px] bg-primary px-3.5 py-2.5 text-xs font-extrabold uppercase tracking-[0.05em] text-primary-foreground transition-colors hover:bg-accent lg:hidden"
+        >
+          <Phone className="size-4" />
+          Call
         </a>
 
         <button
@@ -85,7 +110,7 @@ export function SiteHeader() {
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="ml-auto flex size-11 items-center justify-center rounded-full border border-white/25 bg-[rgba(3,17,29,0.38)] lg:hidden"
+          className="flex size-11 items-center justify-center rounded-full border border-white/25 bg-[rgba(3,17,29,0.38)] lg:hidden"
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
@@ -106,6 +131,14 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
+          <a
+            href={PHONE_HREF}
+            onClick={() => setOpen(false)}
+            className="mt-2 inline-flex items-center justify-center gap-2 rounded-[6px] bg-primary p-3.5 text-[13px] font-extrabold uppercase tracking-[0.05em] text-primary-foreground"
+          >
+            <Phone className="size-4" />
+            Call {PHONE_DISPLAY}
+          </a>
         </nav>
       )}
     </header>

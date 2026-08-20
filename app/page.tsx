@@ -6,6 +6,7 @@ import { Process } from '@/components/process'
 import { About } from '@/components/about'
 import { Contact } from '@/components/contact'
 import { SiteFooter } from '@/components/site-footer'
+import { BackToTop } from '@/components/back-to-top'
 
 export default function Page() {
   return (
@@ -20,6 +21,7 @@ export default function Page() {
         <Contact />
       </main>
       <SiteFooter />
+      <BackToTop />
     </>
   )
 }
