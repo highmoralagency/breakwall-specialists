@@ -35,13 +35,11 @@ export function SiteHeader() {
           aria-label="Breakwall Specialists — back to top"
           className="group flex items-center gap-2 rounded-full p-0.5 transition-transform hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
-          <span className="grid size-11 place-items-center overflow-hidden rounded-full bg-white shadow-[0_6px_16px_rgba(0,0,0,0.28)] ring-1 ring-white/40">
-            <img
-              src="/assets/breakwall-logo.png"
-              alt="Breakwall Specialists logo"
-              className="size-[38px] object-contain"
-            />
-          </span>
+          <img
+            src="/assets/breakwall-mark-white.png"
+            alt="Breakwall Specialists logo"
+            className="h-10 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.55))]"
+          />
           <span className="hidden font-display text-lg font-extrabold leading-[0.88] tracking-[0.06em] sm:block">
             BREAKWALL
             <small className="block text-[0.7em] font-semibold tracking-[0.24em]">
