@@ -79,21 +79,19 @@ export function Hero() {
         }}
       />
 
+      {/* Mobile logo — upper-left, offset from center, resting over the clouds */}
+      <img
+        src="/assets/breakwall-logo-transparent.png"
+        alt="Breakwall Specialists logo"
+        className="absolute left-[6%] top-[8%] z-20 h-[168px] w-auto object-contain [filter:drop-shadow(0_0_18px_rgba(255,255,255,0.4))_drop-shadow(0_10px_24px_rgba(0,0,0,0.45))] md:hidden"
+      />
+
       {/* Content — drifts up slightly slower for layered depth */}
       <div
         className="relative z-10 mx-auto grid max-w-[1440px] items-center gap-14 px-[22px] pb-[205px] pt-[38vh] will-change-transform md:grid-cols-[minmax(0,690px)_340px] md:justify-between md:px-[4vw] md:pb-[150px] md:pt-[170px]"
         style={{ transform: `translate3d(0, ${offset * -0.06}px, 0)` }}
       >
         <div className="max-w-[520px] md:max-w-none">
-          {/* Mobile logo lockup — centered above the headline, soft white glow */}
-          <div className="mb-5 flex justify-center md:hidden">
-            <img
-              src="/assets/breakwall-logo-transparent.png"
-              alt="Breakwall Specialists logo"
-              className="h-[120px] w-auto object-contain [filter:drop-shadow(0_0_18px_rgba(255,255,255,0.35))_drop-shadow(0_10px_24px_rgba(0,0,0,0.45))]"
-            />
-          </div>
-
           <p className="mb-2 text-center text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#70c7ff] md:text-left md:text-xs">
             Windsor • Essex County • Lake St. Clair
           </p>
