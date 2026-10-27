@@ -13,7 +13,7 @@ export function BrandLogo({ className = '' }: BrandLogoProps) {
       <img
         src="/assets/breakwall-logo-official.png"
         alt="Breakwall Specialist Inc. logo"
-        className="relative h-full w-auto object-contain [filter:drop-shadow(0_12px_28px_rgba(0,0,0,0.5))]"
+        className="relative h-full w-auto object-contain [filter:drop-shadow(0_10px_18px_rgba(6,23,36,0.3))]"
       />
     </div>
   )

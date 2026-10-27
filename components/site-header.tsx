@@ -44,89 +44,82 @@ export function SiteHeader() {
   return (
     <header
       id="top"
-      className={`fixed inset-x-0 top-0 z-30 text-white transition-transform duration-500 ease-out ${
+      className={`fixed inset-x-0 top-0 z-30 bg-[#f6f9fb]/95 text-navy transition-[transform,box-shadow] duration-500 ease-out ${
         hidden ? '-translate-y-full' : 'translate-y-0'
-      }`}
-      style={{
-        background: atTop
-          ? 'linear-gradient(180deg, rgba(4,17,29,.94), rgba(4,17,29,.55), transparent)'
-          : 'rgba(4,17,29,.9)',
-        backdropFilter: atTop ? 'none' : 'saturate(140%) blur(10px)',
-        boxShadow: atTop ? 'none' : '0 10px 30px rgba(0,0,0,0.35)',
-        transitionProperty: 'transform, background, box-shadow',
-      }}
+      } ${atTop ? '' : 'shadow-[0_10px_30px_rgba(6,23,36,0.14)] backdrop-blur-md'}`}
     >
-      <div className="mx-auto flex h-[70px] max-w-[1440px] items-center gap-6 px-4 md:h-[84px] md:px-[4vw]">
+      <div className="flex h-[76px] items-stretch md:h-[88px]">
         <button
           type="button"
           onClick={scrollToTop}
           aria-label="Breakwall Specialists — back to top"
-          className="group flex items-center rounded-full transition-transform hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="flex items-center pl-6 md:pl-[5vw]"
         >
-          <span className="font-display text-base font-extrabold leading-[0.88] tracking-[0.06em] sm:text-lg">
-            BREAKWALL
-            <small className="block text-[0.7em] font-semibold tracking-[0.24em]">
-              SPECIALISTS
+          <span className="font-display text-[27px] font-extrabold uppercase leading-[0.82] tracking-[0.01em] md:text-[30px]">
+            Breakwall
+            <small className="block text-[0.6em] font-bold tracking-[0.2em]">
+              Specialists
             </small>
           </span>
         </button>
 
         <nav
           aria-label="Primary navigation"
-          className="ml-auto hidden gap-7 text-[13px] font-semibold uppercase tracking-[0.06em] lg:flex"
+          className="ml-auto hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.06em] lg:flex"
         >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="opacity-90 transition-opacity hover:opacity-100"
+              className="text-navy/80 transition-colors hover:text-primary"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Call Now — desktop */}
-        <a
-          href={PHONE_HREF}
-          className="ml-6 hidden items-center gap-2 rounded-[5px] bg-primary px-5 py-3 text-xs font-extrabold uppercase tracking-[0.05em] text-primary-foreground transition-colors hover:bg-accent lg:inline-flex"
-        >
-          <Phone className="size-4" />
-          Call Now
-        </a>
-
-        {/* Call Now — mobile (icon + short label), sits left of the menu toggle */}
+        {/* Call — mobile */}
         <a
           href={PHONE_HREF}
           aria-label={`Call Breakwall Specialists at ${PHONE_DISPLAY}`}
-          className="ml-auto inline-flex items-center gap-2 rounded-[5px] bg-primary px-3.5 py-2.5 text-xs font-extrabold uppercase tracking-[0.05em] text-primary-foreground transition-colors hover:bg-accent lg:hidden"
+          className="ml-auto flex items-center gap-2 px-3 font-display text-xl font-bold uppercase tracking-[0.06em] text-navy lg:hidden"
         >
-          <Phone className="size-4" />
+          <Phone className="size-6" strokeWidth={1.75} />
           Call
         </a>
 
-        <button
-          type="button"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="flex size-11 items-center justify-center rounded-full border border-white/25 bg-[rgba(3,17,29,0.38)] lg:hidden"
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+        {/* Blue angled slab — menu toggle on mobile, phone CTA on desktop */}
+        <div className="header-slab flex w-[120px] items-center justify-end bg-primary pr-5 text-primary-foreground lg:ml-8 lg:w-auto lg:pl-20 lg:pr-[5vw]">
+          <button
+            type="button"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="flex size-11 items-center justify-center lg:hidden"
+          >
+            {open ? <X className="size-8" /> : <Menu className="size-8" />}
+          </button>
+          <a
+            href={PHONE_HREF}
+            className="hidden items-center gap-2.5 font-display text-xl font-bold uppercase tracking-[0.05em] transition-opacity hover:opacity-85 lg:inline-flex"
+          >
+            <Phone className="size-5" />
+            Call {PHONE_DISPLAY}
+          </a>
+        </div>
       </div>
 
       {open && (
         <nav
           aria-label="Mobile navigation"
-          className="absolute inset-x-3.5 top-[70px] flex flex-col rounded-[9px] border border-white/10 bg-navy-panel p-3.5 shadow-[0_20px_50px_rgba(0,0,0,0.35)] lg:hidden"
+          className="absolute inset-x-3.5 top-[84px] flex flex-col rounded-[9px] border border-white/10 bg-navy-panel p-3.5 shadow-[0_20px_50px_rgba(0,0,0,0.35)] lg:hidden"
         >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="border-b border-white/10 p-3.5 text-[13px] font-bold uppercase text-white last:border-0"
+              className="border-b border-white/10 p-3.5 text-[15px] font-bold uppercase text-navy-foreground last:border-0"
             >
               {link.label}
             </a>
@@ -134,7 +127,7 @@ export function SiteHeader() {
           <a
             href={PHONE_HREF}
             onClick={() => setOpen(false)}
-            className="mt-2 inline-flex items-center justify-center gap-2 rounded-[6px] bg-primary p-3.5 text-[13px] font-extrabold uppercase tracking-[0.05em] text-primary-foreground"
+            className="mt-2 inline-flex items-center justify-center gap-2 rounded-[6px] bg-primary p-3.5 text-[15px] font-bold uppercase tracking-[0.05em] text-primary-foreground"
           >
             <Phone className="size-4" />
             Call {PHONE_DISPLAY}

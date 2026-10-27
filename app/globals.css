@@ -83,7 +83,37 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .beacon-glow {
+/* Hero angled shapes — mobile stacks the video above a diagonal edge,
+   desktop slants the video's left edge beside the copy. */
+.hero-frame {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+.hero-media {
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 0 91%);
+}
+.hero-slab {
+  clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);
+}
+.header-slab {
+  clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@media (min-width: 768px) {
+  .hero-frame {
+    clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .hero-media {
+    clip-path: polygon(19% 0, 100% 0, 100% 100%, 5% 100%);
+  }
+  .hero-slab {
+    clip-path: polygon(0 42%, 100% 0, 100% 100%, 0 100%);
+  }
+  .header-slab {
+    clip-path: polygon(64px 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.beacon-glow {
     animation: beacon-pulse 3.6s ease-in-out infinite;
   }
 
