@@ -7,6 +7,8 @@ const services = [
     copy: 'Custom steel and shoreline protection systems designed around your property and water conditions.',
     image: '/services/breakwalls.webp',
     alt: 'Steel sheet pile breakwall along a lakefront lawn',
+    bannerPosition: 'top',
+    focus: '40% 80%',
   },
   {
     number: '02',
@@ -14,6 +16,8 @@ const services = [
     copy: 'Reduce wave energy, spray and shoreline erosion with professionally designed deflection systems.',
     image: '/services/wave-deflectors.webp',
     alt: 'Wave curling back off a curved steel wave deflector',
+    bannerPosition: 'top',
+    focus: '50% 70%',
   },
   {
     number: '03',
@@ -21,6 +25,8 @@ const services = [
     copy: 'Functional, durable docks created for safe access, entertaining and everyday waterfront enjoyment.',
     image: '/services/docks.webp',
     alt: 'Composite dock extending into calm lake water',
+    bannerPosition: 'top',
+    focus: '65% 75%',
   },
   {
     number: '04',
@@ -28,6 +34,8 @@ const services = [
     copy: 'Polished outdoor living spaces that connect your home to the water with style and practicality.',
     image: '/services/paver-decks.webp',
     alt: 'Stone paver patio overlooking the lake',
+    bannerPosition: 'top',
+    focus: '45% 65%',
   },
   {
     number: '05',
@@ -35,6 +43,8 @@ const services = [
     copy: 'Premium Golden lifts that protect your watercraft while keeping launching simple and convenient.',
     image: '/services/boat-lifts.webp',
     alt: 'Boat and personal watercraft raised on lifts beside a dock',
+    bannerPosition: 'bottom',
+    focus: '50% 45%',
   },
   {
     number: '06',
@@ -42,8 +52,10 @@ const services = [
     copy: 'Professional inspections, restoration and maintenance to keep shoreline structures performing properly.',
     image: '/services/repairs.webp',
     alt: 'Crew member inspecting a steel breakwall',
+    bannerPosition: 'bottom',
+    focus: '45% 50%',
   },
-]
+] as const
 
 export function Services() {
   return (
