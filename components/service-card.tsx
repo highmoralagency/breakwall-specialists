@@ -51,15 +51,24 @@ export function ServiceCard({ number, title, copy, image, alt }: ServiceCardProp
       </div>
 
       <div className="relative">
-        <div className="mb-auto font-display text-lg font-extrabold text-accent">
+        <div className="font-display text-lg font-extrabold text-accent">
           {number}
         </div>
-        <h3 className="mb-2.5 mt-24 font-display text-[30px] uppercase leading-none md:mt-28">
-          {title}
-        </h3>
-        <p className="max-w-[34ch] text-sm leading-relaxed text-[#aac0cf]">
-          {copy}
-        </p>
+
+        <div className="service-banner relative -ml-7 mt-24 w-[calc(100%+1.75rem)] md:-ml-8 md:mt-28 md:w-[calc(100%+2rem)]">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 translate-x-2 translate-y-2 bg-primary [clip-path:polygon(0_0,100%_0,calc(100%-28px)_100%,0_100%)]"
+          />
+          <div className="relative border-l-4 border-primary bg-[#081827]/95 py-4 pl-6 pr-10 backdrop-blur-sm [clip-path:polygon(0_0,100%_0,calc(100%-28px)_100%,0_100%)] md:pl-7">
+            <h3 className="mb-2 font-display text-[30px] uppercase leading-none text-balance">
+              {title}
+            </h3>
+            <p className="max-w-[34ch] text-sm leading-relaxed text-[#c3d4e0] text-pretty">
+              {copy}
+            </p>
+          </div>
+        </div>
       </div>
     </article>
   )
