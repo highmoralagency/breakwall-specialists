@@ -122,6 +122,36 @@
   }
 }
 
+/* Service cards — photo sits behind a slanted blue edge, echoing the hero */
+.service-accent {
+  clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 0.85;
+}
+.service-photo {
+  clip-path: polygon(calc(24% + 6px) 0, 100% 0, 100% 100%, 6px 100%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .service-media {
+    transform: translateX(18%);
+    opacity: 0;
+    transition:
+      transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 700ms ease-out;
+  }
+  .service-card[data-visible='true'] .service-media {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .service-photo img {
+    scale: 1.12;
+    transition: scale 1600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .service-card[data-visible='true'] .service-photo img {
+    scale: 1;
+  }
+}
+
 @keyframes beacon-pulse {
   0%,
   100% {
