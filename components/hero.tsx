@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { BrandLogo } from '@/components/brand-logo'
 
 const trust = [
   {
@@ -80,11 +81,7 @@ export function Hero() {
       />
 
       {/* Mobile logo — upper-left, offset from center, resting over the clouds */}
-      <img
-        src="/assets/breakwall-logo-transparent.png"
-        alt="Breakwall Specialists logo"
-        className="absolute left-[6%] top-[14%] z-20 h-[168px] w-auto object-contain [filter:drop-shadow(0_0_18px_rgba(255,255,255,0.4))_drop-shadow(0_10px_24px_rgba(0,0,0,0.45))] md:hidden"
-      />
+      <BrandLogo className="absolute left-[6%] top-[14%] z-20 h-[176px] md:hidden" />
 
       {/* Content — drifts up slightly slower for layered depth */}
       <div
@@ -127,11 +124,7 @@ export function Hero() {
         {/* Desktop: logo lockup sits above the advantages card on the right */}
         <div className="hidden md:block">
           <div className="mb-6 mt-10 flex justify-end">
-            <img
-              src="/assets/breakwall-logo-transparent.png"
-              alt="Breakwall Specialists logo"
-              className="h-[170px] w-auto object-contain [filter:drop-shadow(0_0_22px_rgba(255,255,255,0.32))_drop-shadow(0_14px_30px_rgba(0,0,0,0.5))]"
-            />
+            <BrandLogo className="relative h-[190px]" />
           </div>
           <aside
             aria-label="Company advantages"
