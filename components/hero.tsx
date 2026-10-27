@@ -27,72 +27,62 @@ export function Hero() {
   return (
     <section
       aria-label="Breakwall Specialists hero section"
-      className="relative overflow-hidden bg-navy text-white"
+      className="relative overflow-hidden bg-background pt-[76px] text-navy md:pt-[88px]"
     >
-      <div className="mx-auto flex max-w-[1440px] flex-col md:grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:items-center md:gap-12 md:px-[4vw] md:pb-20 md:pt-[132px] lg:gap-16">
-        {/* Video — full-bleed on top for mobile, framed on the right for desktop */}
-        <div className="order-1 md:order-2">
-          <div className="relative aspect-[3/2] w-full overflow-hidden md:aspect-[16/9] md:rounded-[8px] md:border md:border-white/10 md:shadow-[0_30px_70px_rgba(0,0,0,0.4)]">
-            <HeroVideo />
-            {/* Mobile: keeps the fixed nav legible and blends the video into the content below */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 md:hidden"
-              style={{
-                background:
-                  'linear-gradient(180deg, rgba(3,17,29,.7) 0%, rgba(3,17,29,0) 32%, rgba(3,17,29,0) 70%, #0a2236 100%)',
-              }}
-            />
-          </div>
+      {/* Concrete backdrop and angled light panels */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[url(/assets/concrete-texture.png)] bg-cover bg-center opacity-70"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-[34%] h-[40%] w-[58%] bg-white/75 [clip-path:polygon(45%_0,100%_0,100%_100%,0_72%)] md:left-0 md:right-auto md:top-0 md:h-full md:w-[52%] md:[clip-path:polygon(0_0,82%_0,100%_100%,0_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-[50%] h-[30%] w-[24%] bg-muted/80 [clip-path:polygon(100%_0,100%_100%,0_55%)] md:hidden"
+      />
 
-          {/* Desktop: advantages strip directly under the video */}
-          <ul
-            aria-label="Company advantages"
-            className="mt-6 hidden grid-cols-3 gap-6 md:grid"
-          >
-            {trust.map((item) => (
-              <li key={item.title} className="border-t border-white/20 pt-4">
-                <strong className="block font-display text-lg uppercase lg:text-xl">
-                  {item.title}
-                </strong>
-                <span className="mt-1 block text-[13px] leading-relaxed text-white/70">
-                  {item.copy}
-                </span>
-              </li>
-            ))}
-          </ul>
+      <div className="relative md:grid md:min-h-[600px] md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:min-h-[660px]">
+        {/* Video — full-bleed with a diagonal bottom on mobile, slanted left edge on desktop */}
+        <div className="hero-frame relative bg-primary md:order-2">
+          <div className="hero-media relative aspect-[4/3] w-full md:absolute md:inset-0 md:aspect-auto">
+            <HeroVideo />
+          </div>
         </div>
 
-        {/* Text — below the video on mobile, beside it on desktop */}
-        <div className="order-2 flex flex-col items-center px-[22px] pb-12 pt-2 md:order-1 md:items-start md:px-0 md:pb-0 md:pt-0">
-          <BrandLogo className="relative -mt-14 h-[150px] md:mt-0 md:h-[140px] lg:h-[160px]" />
+        {/* Copy */}
+        <div className="relative z-10 flex flex-col items-center px-6 pb-8 text-center md:order-1 md:items-start md:justify-center md:py-16 md:pl-[5vw] md:pr-6 md:text-left">
+          <BrandLogo className="relative -mt-[84px] h-[168px] md:mt-0 md:h-[150px] lg:h-[170px]" />
 
-          <p className="mt-6 text-center text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#70c7ff] md:text-left md:text-xs">
+          <p className="mt-5 text-[13px] font-bold uppercase tracking-[0.14em] text-primary md:text-sm">
             Windsor • Essex County • Lake St. Clair
           </p>
-          <h1 className="mt-3 text-balance text-center font-display text-[58px] font-extrabold uppercase leading-[0.82] tracking-tight md:text-left md:text-[clamp(56px,5.6vw,96px)] md:leading-[0.8]">
+          <h1 className="mt-3 font-display text-[64px] font-extrabold uppercase leading-[0.84] tracking-tight text-navy md:text-[clamp(64px,6vw,104px)] md:leading-[0.82]">
             Protect Your
             <br />
-            <span className="text-[#e8f5ff]">Waterfront.</span>
+            Waterfront.
           </h1>
-          <p className="my-2 -rotate-2 text-center font-script text-[36px] text-accent md:my-3 md:text-left md:text-[clamp(34px,3.4vw,56px)]">
+          <p className="mt-1 -rotate-3 whitespace-nowrap font-script text-[clamp(28px,8.6vw,40px)] leading-tight text-primary md:text-[clamp(40px,3.6vw,60px)]">
             Preserve your lifestyle.
           </p>
-          <p className="max-w-[470px] text-pretty text-center text-sm leading-relaxed text-white/85 md:max-w-[520px] md:text-left md:text-base md:leading-[1.7]">
+          <p className="mt-3 max-w-[440px] text-pretty text-base leading-relaxed text-foreground/75 md:max-w-[500px] md:text-lg">
             Premium metal breakwalls, docks, wave deflectors and complete
             shoreline solutions built for strength, longevity and lasting
             waterfront value.
           </p>
-          <div className="mt-7 grid w-full grid-cols-2 gap-3 md:flex md:w-auto md:gap-3.5">
+
+          {/* Desktop CTAs sit with the copy */}
+          <div className="mt-8 hidden gap-3.5 md:flex">
             <a
               href="#contact"
-              className="inline-flex min-h-12 items-center justify-center rounded-[5px] bg-primary px-4 text-[10px] font-extrabold uppercase tracking-[0.045em] text-primary-foreground shadow-[0_14px_32px_rgba(0,122,204,0.25)] transition-colors hover:bg-accent md:min-h-[52px] md:px-6 md:text-xs"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-[6px] bg-primary px-7 text-sm font-bold uppercase tracking-[0.06em] text-primary-foreground shadow-[0_14px_32px_rgba(22,136,212,0.3)] transition-colors hover:bg-accent"
             >
               Get a Free Estimate
             </a>
             <a
               href="#projects"
-              className="inline-flex min-h-12 items-center justify-center rounded-[5px] border border-white/60 bg-[rgba(4,21,35,0.26)] px-4 text-[10px] font-extrabold uppercase tracking-[0.045em] text-white transition-colors hover:bg-[rgba(4,21,35,0.5)] md:min-h-[52px] md:px-6 md:text-xs"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-[6px] border-2 border-navy px-7 text-sm font-bold uppercase tracking-[0.06em] text-navy transition-colors hover:bg-navy hover:text-navy-foreground"
             >
               View Our Projects
             </a>
@@ -100,8 +90,47 @@ export function Hero() {
         </div>
       </div>
 
+      {/* Navy slab — CTAs on mobile, advantages on desktop */}
+      <div className="hero-slab relative bg-navy px-6 pb-12 pt-20 text-navy-foreground md:-mt-16 md:px-[5vw] md:pb-10 md:pt-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 right-0 h-[80%] w-[32%] bg-primary [clip-path:polygon(100%_0,100%_100%,0_100%)] md:h-full md:w-[18%]"
+        />
+
+        <div className="relative flex max-w-[280px] flex-col gap-3.5 md:hidden">
+          <a
+            href="#contact"
+            className="inline-flex min-h-[52px] items-center justify-center rounded-[6px] bg-primary px-5 text-[15px] font-bold uppercase tracking-[0.06em] text-primary-foreground transition-colors hover:bg-accent"
+          >
+            Get a Free Estimate
+          </a>
+          <a
+            href="#projects"
+            className="inline-flex min-h-[52px] items-center justify-center rounded-[6px] border border-navy-foreground/80 px-5 text-[15px] font-bold uppercase tracking-[0.06em] text-navy-foreground transition-colors hover:bg-navy-foreground/10"
+          >
+            View Our Projects
+          </a>
+        </div>
+
+        <ul
+          aria-label="Company advantages"
+          className="relative hidden max-w-[1100px] grid-cols-3 gap-8 md:grid"
+        >
+          {trust.map((item) => (
+            <li key={item.title} className="border-t-2 border-primary pt-4">
+              <strong className="block font-display text-xl uppercase lg:text-2xl">
+                {item.title}
+              </strong>
+              <span className="mt-1 block text-sm leading-relaxed text-navy-muted">
+                {item.copy}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       {/* Stats bar */}
-      <div className="grid w-full grid-cols-2 bg-[rgba(3,17,29,0.92)] px-4 py-4 md:grid-cols-4 md:px-[5vw] md:py-6">
+      <div className="relative grid w-full grid-cols-2 bg-navy-deep px-4 py-4 text-navy-foreground md:grid-cols-4 md:px-[5vw] md:py-6">
         {stats.map((stat, i) => (
           <div
             key={stat.value}
@@ -109,10 +138,10 @@ export function Hero() {
               i % 2 === 0 ? 'border-r border-white/20' : ''
             } md:border-r md:last:border-0`}
           >
-            <strong className="block font-display text-[19px] uppercase md:text-[25px]">
+            <strong className="block font-display text-xl uppercase md:text-[25px]">
               {stat.value}
             </strong>
-            <span className="mt-1 block text-[9px] text-white/60 md:text-xs">
+            <span className="mt-1 block text-xs text-navy-muted md:text-sm">
               {stat.label}
             </span>
           </div>

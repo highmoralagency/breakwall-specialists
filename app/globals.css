@@ -83,12 +83,72 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .beacon-glow {
+/* Hero angled shapes — mobile stacks the video above a diagonal edge,
+   desktop slants the video's left edge beside the copy. */
+.hero-frame {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+.hero-media {
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 0 91%);
+}
+.hero-slab {
+  clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);
+}
+.header-slab {
+  clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@media (min-width: 768px) {
+  .hero-frame {
+    clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .hero-media {
+    clip-path: polygon(19% 0, 100% 0, 100% 100%, 5% 100%);
+  }
+  .hero-slab {
+    clip-path: polygon(0 42%, 100% 0, 100% 100%, 0 100%);
+  }
+  .header-slab {
+    clip-path: polygon(64px 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.beacon-glow {
     animation: beacon-pulse 3.6s ease-in-out infinite;
   }
 
   .brand-logo-enter {
     animation: brand-logo-rise 900ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+  }
+}
+
+/* Service cards — photo sits behind a slanted blue edge, echoing the hero */
+.service-accent {
+  clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 0.85;
+}
+.service-photo {
+  clip-path: polygon(calc(24% + 6px) 0, 100% 0, 100% 100%, 6px 100%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .service-media {
+    transform: translateX(18%);
+    opacity: 0;
+    transition:
+      transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 700ms ease-out;
+  }
+  .service-card[data-visible='true'] .service-media {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .service-photo img {
+    scale: 1.12;
+    transition: scale 1600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .service-card[data-visible='true'] .service-photo img {
+    scale: 1;
   }
 }
 
