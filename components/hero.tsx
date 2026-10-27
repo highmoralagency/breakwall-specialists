@@ -97,16 +97,16 @@ export function Hero() {
           className="pointer-events-none absolute bottom-0 right-0 h-[80%] w-[32%] bg-primary [clip-path:polygon(100%_0,100%_100%,0_100%)] md:h-full md:w-[18%]"
         />
 
-        <div className="relative flex max-w-[280px] flex-col gap-3.5 md:hidden">
+        <div className="relative mx-auto flex w-full max-w-[340px] flex-col gap-4 md:hidden">
           <a
             href="#contact"
-            className="inline-flex min-h-[52px] items-center justify-center rounded-[6px] bg-primary px-5 text-[15px] font-bold uppercase tracking-[0.06em] text-primary-foreground transition-colors hover:bg-accent"
+            className="inline-flex min-h-[60px] items-center justify-center rounded-[6px] bg-primary px-6 text-base font-bold shadow-[0_14px_32px_rgba(22,136,212,0.35)] uppercase tracking-[0.06em] text-primary-foreground transition-colors hover:bg-accent"
           >
             Get a Free Estimate
           </a>
           <a
             href="#projects"
-            className="inline-flex min-h-[52px] items-center justify-center rounded-[6px] border border-navy-foreground/80 px-5 text-[15px] font-bold uppercase tracking-[0.06em] text-navy-foreground transition-colors hover:bg-navy-foreground/10"
+            className="inline-flex min-h-[60px] items-center justify-center rounded-[6px] border-2 border-navy-foreground/80 bg-navy/60 px-6 text-base font-bold backdrop-blur-sm uppercase tracking-[0.06em] text-navy-foreground transition-colors hover:bg-navy-foreground/10"
           >
             View Our Projects
           </a>
