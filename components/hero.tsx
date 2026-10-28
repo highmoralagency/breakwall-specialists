@@ -29,18 +29,18 @@ export function Hero() {
       aria-label="Breakwall Specialists hero section"
       className="relative overflow-hidden bg-background pt-[76px] text-navy md:pt-[88px]"
     >
-      {/* Brushed silver metal backdrop with angled light reflections */}
+      {/* Concrete backdrop and angled light panels */}
       <div
         aria-hidden="true"
-        className="metal-surface pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 bg-[url(/assets/concrete-texture.png)] bg-cover bg-center opacity-70"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-[34%] h-[40%] w-[58%] bg-gradient-to-br from-white/50 to-white/0 [clip-path:polygon(45%_0,100%_0,100%_100%,0_72%)] md:left-0 md:right-auto md:top-0 md:h-full md:w-[52%] md:[clip-path:polygon(0_0,82%_0,100%_100%,0_100%)]"
+        className="pointer-events-none absolute right-0 top-[34%] h-[40%] w-[58%] bg-white/75 [clip-path:polygon(45%_0,100%_0,100%_100%,0_72%)] md:left-0 md:right-auto md:top-0 md:h-full md:w-[52%] md:[clip-path:polygon(0_0,82%_0,100%_100%,0_100%)]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-[50%] h-[30%] w-[24%] bg-gradient-to-l from-slate-500/15 to-transparent [clip-path:polygon(100%_0,100%_100%,0_55%)] md:hidden"
+        className="pointer-events-none absolute right-0 top-[50%] h-[30%] w-[24%] bg-muted/80 [clip-path:polygon(100%_0,100%_100%,0_55%)] md:hidden"
       />
 
       <div className="relative md:grid md:min-h-[600px] md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:min-h-[660px]">
