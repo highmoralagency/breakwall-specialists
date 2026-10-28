@@ -1,3 +1,5 @@
+import { ProjectGallery } from '@/components/project-gallery'
+
 export function ProjectBand() {
   return (
     <section
@@ -26,16 +28,7 @@ export function ProjectBand() {
         </a>
       </div>
 
-      <div className="relative min-h-[520px] overflow-hidden rounded-[14px] shadow-[0_35px_80px_rgba(8,33,51,0.22)] md:min-h-[560px]">
-        <div className="absolute left-6 top-6 z-10 rounded bg-[rgba(5,22,36,0.82)] px-4 py-3 text-[11px] font-extrabold uppercase tracking-[0.08em] text-white">
-          Metal Breakwall System
-        </div>
-        <img
-          src="/assets/breakwall-mobile-hero.jpg"
-          alt="Metal breakwall with waves crashing against it"
-          className="absolute size-full object-cover object-[center_45%]"
-        />
-      </div>
+      <ProjectGallery />
     </section>
   )
 }
