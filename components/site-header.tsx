@@ -82,9 +82,9 @@ export function SiteHeader() {
         <a
           href={PHONE_HREF}
           aria-label={`Call Breakwall Specialists at ${PHONE_DISPLAY}`}
-          className="ml-auto flex items-center gap-2 px-3 font-display text-xl font-bold uppercase tracking-[0.06em] text-navy lg:hidden"
-        >
-          <Phone className="size-6" strokeWidth={1.75} />
+  className="ml-auto flex min-h-11 items-center gap-2 px-3 font-display text-[22px] font-black uppercase tracking-[0.06em] text-primary [text-shadow:0_1px_0_rgb(255_255_255/0.55)] lg:hidden"
+  >
+  <Phone className="size-6" strokeWidth={2.75} />
           Call
         </a>
 
