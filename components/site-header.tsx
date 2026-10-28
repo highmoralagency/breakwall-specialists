@@ -44,9 +44,9 @@ export function SiteHeader() {
   return (
     <header
       id="top"
-      className={`fixed inset-x-0 top-0 z-30 bg-[#f6f9fb]/95 text-navy transition-[transform,box-shadow] duration-500 ease-out ${
+      className={`metal-surface fixed inset-x-0 top-0 z-30 border-b border-white/70 text-navy transition-[transform,box-shadow] duration-500 ease-out ${
         hidden ? '-translate-y-full' : 'translate-y-0'
-      } ${atTop ? '' : 'shadow-[0_10px_30px_rgba(6,23,36,0.14)] backdrop-blur-md'}`}
+      } ${atTop ? '' : 'shadow-[0_10px_30px_rgba(6,23,36,0.18)]'}`}
     >
       <div className="flex h-[76px] items-stretch md:h-[88px]">
         <button

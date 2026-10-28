@@ -152,6 +152,67 @@
   }
 }
 
+/* Brushed silver metal — light brick-bond panels with a moving shine */
+.metal-surface {
+  isolation: isolate;
+  background:
+    linear-gradient(
+      115deg,
+      #e9edf1 0%,
+      #f8fafc 18%,
+      #cfd6dd 38%,
+      #eef2f5 55%,
+      #c4ccd4 74%,
+      #f3f6f8 100%
+    );
+}
+.metal-surface::before,
+.metal-surface::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.metal-surface::before {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.18) 0 1px,
+      transparent 1px 3px
+    ),
+    url(/assets/metal-brick.webp) center / 560px auto repeat;
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+}
+.metal-surface::after {
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.85) 46%,
+    rgba(255, 255, 255, 0.15) 52%,
+    transparent 64%
+  );
+  background-size: 250% 100%;
+  background-position: 120% 0;
+  mix-blend-mode: soft-light;
+  opacity: 0.9;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .metal-surface::after {
+    animation: metal-shine 7s ease-in-out infinite;
+  }
+}
+@keyframes metal-shine {
+  0% {
+    background-position: 120% 0;
+  }
+  55%,
+  100% {
+    background-position: -120% 0;
+  }
+}
+
 @keyframes beacon-pulse {
   0%,
   100% {
