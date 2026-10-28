@@ -44,9 +44,9 @@ export function SiteHeader() {
   return (
     <header
       id="top"
-      className={`fixed inset-x-0 top-0 z-30 bg-[#f6f9fb]/95 text-navy transition-[transform,box-shadow] duration-500 ease-out ${
+      className={`fixed inset-x-0 top-0 z-30 border-b border-white/60 bg-[#c9cdd1] bg-[url('/assets/nav-steel.webp')] bg-cover bg-center text-navy transition-[transform,box-shadow] duration-500 ease-out ${
         hidden ? '-translate-y-full' : 'translate-y-0'
-      } ${atTop ? '' : 'shadow-[0_10px_30px_rgba(6,23,36,0.14)] backdrop-blur-md'}`}
+      } ${atTop ? 'shadow-[0_4px_14px_rgba(6,23,36,0.12)]' : 'shadow-[0_10px_30px_rgba(6,23,36,0.22)]'}`}
     >
       <div className="flex h-[76px] items-stretch md:h-[88px]">
         <button
@@ -82,9 +82,9 @@ export function SiteHeader() {
         <a
           href={PHONE_HREF}
           aria-label={`Call Breakwall Specialists at ${PHONE_DISPLAY}`}
-          className="ml-auto flex items-center gap-2 px-3 font-display text-xl font-bold uppercase tracking-[0.06em] text-navy lg:hidden"
-        >
-          <Phone className="size-6" strokeWidth={1.75} />
+  className="ml-auto flex min-h-11 items-center gap-2 px-3 font-display text-[22px] font-black uppercase tracking-[0.06em] text-primary [text-shadow:0_1px_0_rgb(255_255_255/0.55)] lg:hidden"
+  >
+  <Phone className="size-6" strokeWidth={2.75} />
           Call
         </a>
 
