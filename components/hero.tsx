@@ -61,10 +61,10 @@ export function Hero() {
           <h1 className="mt-3 font-display text-[64px] font-extrabold uppercase leading-[0.84] tracking-tight text-navy md:text-[clamp(64px,6vw,104px)] md:leading-[0.82]">
             Protect Your
             <br />
-            Waterfront.
+            Waterfront
           </h1>
           <p className="mt-1 -rotate-3 whitespace-nowrap font-script text-[clamp(28px,8.6vw,40px)] leading-tight text-primary md:text-[clamp(40px,3.6vw,60px)]">
-            Preserve your lifestyle.
+            Preserve your lifestyle
           </p>
           <p className="mt-3 max-w-[440px] text-pretty text-base leading-relaxed text-foreground/75 md:max-w-[500px] md:text-lg">
             Premium metal breakwalls, docks, wave deflectors and complete
