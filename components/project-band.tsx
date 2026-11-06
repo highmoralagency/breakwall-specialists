@@ -22,7 +22,7 @@ export function ProjectBand() {
         </p>
         <a
           href="#contact"
-          className="inline-flex min-h-[52px] items-center justify-center rounded-[5px] bg-primary px-6 text-xs font-extrabold uppercase tracking-[0.045em] text-primary-foreground shadow-[0_14px_32px_rgba(0,122,204,0.25)] transition-colors hover:bg-accent"
+          className="metal-blue-bar flex min-h-[56px] w-full items-center justify-center rounded-[5px] px-6 text-sm font-extrabold uppercase tracking-[0.06em] text-primary-foreground shadow-[0_14px_32px_rgba(0,122,204,0.25)] [text-shadow:0_1px_2px_rgba(0,0,0,0.45)] md:inline-flex md:w-auto md:text-xs"
         >
           Discuss Your Project
         </a>
