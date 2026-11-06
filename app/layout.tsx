@@ -29,10 +29,10 @@ const siteTitle = 'Breakwall Specialists | Waterfront Protection'
 const siteDescription =
   'Premium breakwalls, docks, wave deflectors, boat lifts and waterfront construction across Windsor-Essex and Lake St. Clair.'
 const shareImage = {
-  url: '/og-image.jpg',
-  width: 1200,
-  height: 630,
-  alt: 'Breakwall Specialists logo over a waterfront dock on Lake St. Clair',
+  url: '/og-share.jpg',
+  width: 1086,
+  height: 1448,
+  alt: 'Breakwall Specialists lighthouse logo above a sunset dock with jet skis on Lake St. Clair',
 }
 
 export const metadata: Metadata = {
