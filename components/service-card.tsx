@@ -94,11 +94,8 @@ export function ServiceCard({
             bannerOnTop ? 'mt-4' : 'mt-auto'
           }`}
         >
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 translate-x-2 translate-y-2 bg-primary [clip-path:polygon(0_0,100%_0,calc(100%-28px)_100%,0_100%)]"
-          />
-          <div className="relative border-l-4 border-primary bg-[#081827]/95 py-4 pl-6 pr-10 backdrop-blur-sm [clip-path:polygon(0_0,100%_0,calc(100%-28px)_100%,0_100%)] md:pl-7">
+          {/* Plate artwork includes its own blue left, bottom and angled right edges, so it's stretched to the banner box */}
+          <div className="relative bg-[url('/assets/service-plate.webp')] bg-size-[100%_100%] bg-no-repeat pb-7 pl-7 pr-14 pt-5 drop-shadow-[0_10px_18px_rgba(0,0,0,0.45)] md:pl-8">
             <h3 className="mb-2 font-display text-[30px] uppercase leading-none text-balance">
               {title}
             </h3>
