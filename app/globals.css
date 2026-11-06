@@ -86,10 +86,10 @@
 /* Hero angled shapes — mobile stacks the video above a diagonal edge,
    desktop slants the video's left edge beside the copy. */
 .hero-frame {
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-}
-.hero-media {
-  clip-path: polygon(0 0, 100% 0, 100% 72%, 0 91%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+  .hero-media {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 94%);
 }
 .hero-slab {
   clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);
