@@ -122,6 +122,23 @@
   }
 }
 
+/* Brushed blue metal, cut from the service-card plate's edge trim */
+.metal-blue {
+  background-color: var(--primary);
+  background-image: url('/assets/blue-metal.webp');
+  background-size: cover;
+  background-position: center;
+}
+.metal-blue-bar {
+  background-color: var(--primary);
+  background-image: url('/assets/blue-metal-bar.webp');
+  background-size: 100% 100%;
+  transition: filter 200ms ease;
+}
+.metal-blue-bar:hover {
+  filter: brightness(1.12);
+}
+
 /* Service cards — photo sits behind a slanted blue edge, echoing the hero */
 .service-accent {
   clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%);

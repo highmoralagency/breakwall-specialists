@@ -45,7 +45,7 @@ export function Hero() {
 
       <div className="relative md:grid md:min-h-[600px] md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:min-h-[660px]">
         {/* Video — full-bleed with a diagonal bottom on mobile, slanted left edge on desktop */}
-        <div className="hero-frame relative bg-primary md:order-2">
+        <div className="hero-frame metal-blue relative md:order-2">
           <div className="hero-media relative aspect-[4/3] w-full md:absolute md:inset-0 md:aspect-auto">
             <HeroVideo />
           </div>
@@ -94,7 +94,7 @@ export function Hero() {
       <div className="hero-slab relative bg-navy px-6 pb-12 pt-20 text-navy-foreground md:-mt-16 md:px-[5vw] md:pb-10 md:pt-28">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 right-0 h-[80%] w-[32%] bg-primary [clip-path:polygon(100%_0,100%_100%,0_100%)] md:h-full md:w-[18%]"
+          className="pointer-events-none absolute bottom-0 right-0 h-[80%] w-[32%] metal-blue [clip-path:polygon(100%_0,100%_100%,0_100%)] md:h-full md:w-[18%]"
         />
 
         <div className="relative mx-auto flex w-full max-w-[340px] flex-col gap-4 md:hidden">
