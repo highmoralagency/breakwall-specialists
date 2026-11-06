@@ -44,7 +44,7 @@ export function SiteHeader() {
   return (
     <header
       id="top"
-      className={`fixed inset-x-0 top-0 z-30 border-b border-white/60 bg-[#c9cdd1] bg-[url('/assets/nav-steel.webp')] bg-cover bg-center text-navy transition-[transform,box-shadow] duration-500 ease-out ${
+      className={`fixed inset-x-0 top-0 z-30 border-b border-white/60 bg-[#c9cdd1] bg-[linear-gradient(90deg,rgba(244,246,248,0)_0%,rgba(244,246,248,0.15)_25%,rgba(244,246,248,0.7)_50%,rgba(250,251,252,0.95)_70%,#fafbfc_100%),linear-gradient(180deg,rgba(255,255,255,0.35)_0%,rgba(255,255,255,0)_45%,rgba(180,188,196,0.18)_100%),url('/assets/nav-steel.webp')] bg-cover bg-center text-navy transition-[transform,box-shadow] duration-500 ease-out ${
         hidden ? '-translate-y-full' : 'translate-y-0'
       } ${atTop ? 'shadow-[0_4px_14px_rgba(6,23,36,0.12)]' : 'shadow-[0_10px_30px_rgba(6,23,36,0.22)]'}`}
     >
