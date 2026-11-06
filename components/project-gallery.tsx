@@ -34,11 +34,7 @@ export function ProjectGallery() {
 
   return (
     <div className="min-w-0">
-      <div
-        role="tablist"
-        aria-label="Projects"
-        className="-mx-5 mb-4 flex gap-2 overflow-x-auto px-5 pb-1 [scrollbar-width:none] md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden"
-      >
+      <div role="tablist" aria-label="Projects" className="mb-4 grid grid-cols-2 gap-3">
         {projects.map((p, i) => {
           const active = i === projectIndex
           return (
@@ -47,17 +43,32 @@ export function ProjectGallery() {
               type="button"
               role="tab"
               aria-selected={active}
-              onClick={(e) => {
-                selectProject(i)
-                e.currentTarget.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' })
-              }}
-              className={`min-h-11 shrink-0 rounded-[5px] border px-4 text-[11px] font-extrabold uppercase tracking-[0.08em] transition-colors ${
+              onClick={() => selectProject(i)}
+              className={`group flex min-w-0 flex-col overflow-hidden rounded-[8px] border-2 text-left transition-all ${
                 active
-                  ? 'border-primary bg-primary text-primary-foreground'
-                  : 'border-current/20 bg-transparent text-current/70 hover:border-primary hover:text-primary'
+                  ? 'border-primary shadow-[0_10px_24px_rgba(8,33,51,0.18)]'
+                  : 'border-transparent opacity-70 hover:opacity-100'
               }`}
             >
-              {p.title}
+              <span className="relative block aspect-[4/3] w-full overflow-hidden bg-[#081827]">
+                <img
+                  src={p.photos[0]?.src}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <span className="absolute bottom-2 right-2 rounded-[3px] bg-[#081827]/85 px-2 py-1 font-display text-xs leading-none tracking-wide text-white">
+                  {`${p.photos.length} photos`}
+                </span>
+              </span>
+              <span
+                className={`flex min-h-14 flex-1 items-center px-3 py-2 text-[11px] font-extrabold uppercase leading-tight tracking-[0.06em] transition-colors ${
+                  active ? 'bg-primary text-primary-foreground' : 'bg-current/5 text-current'
+                }`}
+              >
+                <span className="line-clamp-2 text-balance">{p.title}</span>
+              </span>
             </button>
           )
         })}
