@@ -53,7 +53,7 @@ export function Hero() {
 
         {/* Copy */}
         <div className="relative z-10 flex flex-col items-center px-6 pb-8 text-center md:order-1 md:items-start md:justify-center md:py-16 md:pl-[5vw] md:pr-6 md:text-left">
-          <BrandLogo className="relative -mt-[84px] h-[168px] md:mt-0 md:h-[150px] lg:h-[170px]" />
+          <BrandLogo className="relative -mt-[91px] h-[181px] md:mt-0 md:h-[162px] lg:h-[184px]" />
 
           <p className="mt-5 text-[13px] font-bold uppercase tracking-[0.14em] text-primary md:text-sm">
             Windsor • Essex County • Lake St. Clair
