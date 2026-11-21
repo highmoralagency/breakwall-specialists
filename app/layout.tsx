@@ -25,14 +25,14 @@ const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : 'http://localhost:3000'
 
-const siteTitle = 'Breakwall Specialists | Waterfront Protection'
+const siteTitle = 'Breakwall Specialist | Waterfront Protection'
 const siteDescription =
   'Premium breakwalls, docks, wave deflectors, boat lifts and waterfront construction across Windsor-Essex and Lake St. Clair.'
 const shareImage = {
   url: '/og-share.jpg',
   width: 1086,
   height: 1448,
-  alt: 'Breakwall Specialists lighthouse logo above a sunset dock with jet skis on Lake St. Clair',
+  alt: 'Breakwall Specialist lighthouse logo above a sunset dock with jet skis on Lake St. Clair',
 }
 
 export const metadata: Metadata = {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   generator: 'v0.app',
   openGraph: {
     type: 'website',
-    siteName: 'Breakwall Specialists',
+    siteName: 'Breakwall Specialist',
     title: siteTitle,
     description: siteDescription,
     images: [shareImage],

@@ -70,7 +70,7 @@ export function HeroVideo({ className = '' }: { className?: string }) {
         muted
         playsInline
         preload="auto"
-        aria-label="Breakwall Specialists crew working from an excavator barge on the water"
+        aria-label="Breakwall Specialist crew working from an excavator barge on the water"
       >
         <source src={`/videos/hero-720.mp4#t=${START_TIME}`} type="video/mp4" media="(max-width: 767px)" />
         <source src={`/videos/hero-1080.mp4#t=${START_TIME}`} type="video/mp4" />

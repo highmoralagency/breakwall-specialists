@@ -26,7 +26,7 @@ const stats = [
 export function Hero() {
   return (
     <section
-      aria-label="Breakwall Specialists hero section"
+      aria-label="Breakwall Specialist hero section"
       className="relative overflow-hidden bg-background pt-[76px] text-navy md:pt-[88px]"
     >
       {/* Concrete backdrop and angled light panels */}

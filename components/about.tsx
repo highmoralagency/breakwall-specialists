@@ -27,7 +27,7 @@ export function About() {
           More than a contractor. A complete waterfront partner.
         </h2>
         <p className="mt-6 text-base leading-[1.8] text-muted-foreground md:text-[17px]">
-          Breakwall Specialists brings shoreline protection, docks, decks, lifts
+          Breakwall Specialist brings shoreline protection, docks, decks, lifts
           and ongoing service together under one roof. The result is a
           waterfront that works as beautifully as it looks.
         </p>
