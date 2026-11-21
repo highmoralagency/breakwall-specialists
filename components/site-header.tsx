@@ -52,13 +52,13 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={scrollToTop}
-          aria-label="Breakwall Specialists — back to top"
+          aria-label="Breakwall Specialist — back to top"
           className="flex items-center pl-6 md:pl-[5vw]"
         >
           <span className="font-display text-[27px] font-extrabold uppercase leading-[0.82] tracking-[0.01em] md:text-[30px]">
             Breakwall
             <small className="block text-[0.6em] font-bold tracking-[0.2em]">
-              Specialists
+              Specialist
             </small>
           </span>
         </button>
@@ -81,7 +81,7 @@ export function SiteHeader() {
         {/* Call — mobile */}
         <a
           href={PHONE_HREF}
-          aria-label={`Call Breakwall Specialists at ${PHONE_DISPLAY}`}
+          aria-label={`Call Breakwall Specialist at ${PHONE_DISPLAY}`}
   className="ml-auto flex min-h-11 items-center gap-2 px-3 font-display text-[22px] font-black uppercase tracking-[0.06em] text-primary [text-shadow:0_1px_0_rgb(255_255_255/0.55)] lg:hidden"
   >
   <Phone className="size-6" strokeWidth={2.75} />

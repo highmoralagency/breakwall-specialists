@@ -3,7 +3,7 @@ export function SiteFooter() {
     <footer className="flex flex-col justify-between gap-7 bg-navy-deep px-6 py-8 text-white md:flex-row md:px-[6vw]">
       <div className="flex flex-col gap-1.5">
         <strong className="font-display text-lg uppercase tracking-[0.06em]">
-          Breakwall Specialists
+          Breakwall Specialist
         </strong>
         <span className="text-xs text-[#728b9a]">
           Your waterfront lifestyle professionals.
